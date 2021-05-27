@@ -154,7 +154,7 @@ class SpanConverter
     private function convertTimestamp(\DateTimeInterface $dateTime = null)
     {
         if ($dateTime === null) {
-            $dateTime = new DateTime();
+            $dateTime = new \DateTime();
         }
 
         return (int)((float) $dateTime->format('U.u') * 1000 * 1000);

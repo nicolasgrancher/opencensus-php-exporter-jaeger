@@ -151,8 +151,12 @@ class SpanConverter
     /**
      * Return the given timestamp as an int in milliseconds.
      */
-    private function convertTimestamp(\DateTimeInterface $dateTime)
+    private function convertTimestamp(\DateTimeInterface $dateTime = null)
     {
+        if ($dateTime === null) {
+            $dateTime = new DateTime();
+        }
+
         return (int)((float) $dateTime->format('U.u') * 1000 * 1000);
     }
 
